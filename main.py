@@ -146,7 +146,7 @@ def resSimXform(b, A, B):
     t = b[4:7]
     R = np.zeros((3, 3))
     R = R_axis_angle(R, b[0:3], b[3])
-    rot_A = R.dot(A) + t[:, np.newaxis]
+    rot_A = b[7]*R.dot(A) + t[:, np.newaxis]
     result = np.sqrt(np.sum((B-rot_A)**2, axis=0))
     return result
 
@@ -178,7 +178,9 @@ def similarity_fitting(Points_A, Points_B):
     W[-1, -1] = np.linalg.det(V.dot(U.T))
     R = V.dot(W).dot(U.T)
     t = cent_1 - R.dot(cent_0)
-    s = 1.0
+    sigma2 = (1.0 / n) * np.multiply(cent_0, cent_0).sum()
+    s = 1.0 / sigma2 * np.trace(np.dot(np.diag(D), W))
+    #s = 1.0
     b0 = np.zeros((8,))
     if np.isreal(R).all():
         axis, theta = R_to_axis_angle(R)
