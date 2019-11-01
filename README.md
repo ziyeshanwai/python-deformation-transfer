@@ -4,4 +4,6 @@ is slower than matlab
 
 [1] : Sumner, Robert W., and Jovan Popović. "Deformation transfer for triangle meshes." ACM Transactions on Graphics (TOG) 23.3 (2004): 399-405.
 
-[2] : https://github.com/SuwoongHeo/Deformation-Transfer-Matlab
+[2] : https://github.com/SuwoongHeo/Deformation-Transfer-Matlab  
+
+[3] : http://groups.csail.mit.edu/graphics/pubs/thesis_sumner_121905.pdf RobertWalker Sumner
