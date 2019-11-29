@@ -178,6 +178,8 @@ def similarity_fitting(Points_A, Points_B):
     W[-1, -1] = np.linalg.det(V.dot(U.T))
     R = V.dot(W).dot(U.T)
     t = cent_1 - R.dot(cent_0)
+    n = Points_A.shape[1]
+    print("n is {}".format(n))
     sigma2 = (1.0 / n) * np.multiply(cent_0, cent_0).sum()
     s = 1.0 / sigma2 * np.trace(np.dot(np.diag(D), W))
     #s = 1.0
@@ -410,7 +412,7 @@ def build_phase1(Adj_idx, E, FS4, VT4, ws, wi, marker):
     I2 = np.zeros((9*n_adj*4, 3))
     I3 = np.zeros((9*len(FS4)*4, 3))
     C1 = np.zeros((9*n_adj, 1))
-    C2 = wi*np.tile(np.reshape(np.eye(3), [9, 1]), (FS.shape[0], 1))
+    C2 = wi*np.tile(np.reshape(np.eye(3), [9, 1]), (FS4.shape[0], 1))
     for i in range(0, FS4.shape[0]):
         for j in range(0, 3):
             if Adj_idx[i, j]:
