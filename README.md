@@ -7,3 +7,7 @@ is slower than matlab
 [2] : https://github.com/SuwoongHeo/Deformation-Transfer-Matlab  
 
 [3] : http://groups.csail.mit.edu/graphics/pubs/thesis_sumner_121905.pdf RobertWalker Sumner
+
+[4] : https://github.com/ziyeshanwai/BlendShapeMaker similar work
+
+
